@@ -1,23 +1,19 @@
-
 {
-
-  "name" : "Mouse  Position",
-  "short_name": "Mouse Position",
-	"version" : "1.0.1",
-	"manifest_version" : 2,
-	"description" : "Cursor Position Info on Tooltip.",
-
-	"browser_action": {
-	
-		"default_popup" : "popup.html" 
-	},
-	"permissions": [
-		"tabs",
-		"background",
-		"http://*/*",
-		"https://*/*"
-],
-  "background": {
-    "scripts": ["js/bg.js"]
-  }
-} 
+	"name": "Mouse position info",
+	"short_name": "Mouse position",
+	"version": "1.0",
+	"description": "Shows current position of cursor on the page",
+	"manifest_version": 2,
+	"permissions": [ "tabs" ],
+	"content_scripts": [{
+		"all_frames": true,
+		"js": [
+			"js/content.js"
+		],
+		"matches": [ "http://*/*", "https://*/*" ],
+		"run_at": "document_end"
+	}],
+	"page_action": {
+		"default_popup": "popup.html"
+	}
+}
