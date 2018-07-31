@@ -7,18 +7,18 @@
 		height          : 20,
 		color           : "#eee",
 		backgroundColor : "#333",
-		prepend         : "(",
 		separator       : ", ",
-		append          : ")",
 	};
 
 	var tooltip = document.createElement("div");
 	document.body.appendChild(tooltip);
 
 	tooltip.style.position        = "absolute";
+	tooltip.style.zIndex          = "11000";
 	tooltip.style.textAlign       = "center";
 	// tooltip.style.padding      = "3px";
 	tooltip.style.borderRadius    = "3px";
+	tooltip.style.fontSize        = settings.widht + "px";
 	tooltip.style.fontFamily      = "monospace";
 	tooltip.style.width           = settings.width + "px";
 	tooltip.style.height          = settings.height + "px";
@@ -29,7 +29,7 @@
 		var x = (e.pageX + settings.offsetX);
 		var y = (e.pageY + settings.offsetY);
 
-		tooltip.innerHTML  = settings.prepend + e.pageX + settings.separator + e.pageY + settings.append;
+		tooltip.innerHTML  = e.pageX + settings.separator + e.pageY;
 
 		// by default the tooltip appears on the bottom right side of the
 		// cursor. when curosr is near this corner of the browser the tooltip
