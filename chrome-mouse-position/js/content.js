@@ -3,7 +3,7 @@
 	var settings = {
 		offsetX         : 30,
 		offsetY         : 30,
-		width           : 100,
+		width           : 140,
 		height          : 20,
 		color           : "#eee",
 		backgroundColor : "#333",
@@ -18,7 +18,7 @@
 	tooltip.style.textAlign       = "center";
 	// tooltip.style.padding      = "3px";
 	tooltip.style.borderRadius    = "3px";
-	tooltip.style.fontSize        = settings.widht + "px";
+	tooltip.style.fontSize        = settings.height + "px";
 	tooltip.style.fontFamily      = "monospace";
 	tooltip.style.width           = settings.width + "px";
 	tooltip.style.height          = settings.height + "px";
